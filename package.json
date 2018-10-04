@@ -1,0 +1,19 @@
+{
+    "name": "furano",
+    "preferGlobal": true,
+    "version": "0.1.0",
+    "author": "Jens Tinglev <tinglev@kth.se>",
+    "description": "JSON schema validation service",
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.10"
+    },
+    "scripts": {
+        "start": "node ./server.js"
+    },
+    "dependencies": {
+        "express": "~4.16.3",
+        "ajv": "~6.5.4",
+        "body-parser": "~1.18.3"
+    }
+}

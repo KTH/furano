@@ -1,0 +1,71 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Deployment",
+    "description": "A deployment to be processed",
+    "type": "object",
+    "properties": {
+        "applicationName": {
+            "description": "The name of the application",
+            "type": "string"
+        },
+        "cluster": {
+            "description": "The name of the cluster (stage, active..)",
+            "type": "string"
+        },
+        "version": {
+            "description": "The version of the image deployed",
+            "type": "string"
+        },
+        "imageName": {
+            "description": "The name of the image deployed",
+            "type": "string"
+        },
+        "publishedUrl": {
+            "description": "The url that is published by the deployment",
+            "type": "string"
+        },
+        "slackChannels": {
+            "description": "A comma separated list of channels to send report to",
+            "type": "string"
+        },
+        "publicNameSwedish": {
+            "description": "The swedish name of the application",
+            "type": "string"
+        },
+        "publicNameEnglish": {
+            "description": "The english name of the application",
+            "type": "string"
+        },
+        "descriptionSwedish": {
+            "description": "The swedish description of the application",
+            "type": "string"
+        },
+        "descriptionEnglish": {
+            "description": "The english description of the application",
+            "type": "string"
+        },
+        "monitorUrl": {
+            "descriptions": "The url to the _monitor page of the application",
+            "type": "string"
+        },
+        "created": {
+            "description": "The date time of when the application was deployed",
+            "type": "string"
+        },
+        "importance": {
+            "description": "The importance of the application",
+            "type": "string"
+        },
+        "servicePath": {
+            "description": "",
+            "type": "string"
+        },
+        "modelVersion": {
+            "description": "",
+            "type": "integer"
+        }
+    },
+    "required": [
+        "applicationName, cluster, version, imageName"
+    ]
+}
