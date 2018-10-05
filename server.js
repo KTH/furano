@@ -1,49 +1,17 @@
 const express = require('express')
-const fs = require('fs')
-const Ajv = require('ajv')
 const bodyParser = require('body-parser')
+const validation = require('./validation')
 const app = express()
 const port = 3000
 
 app.use(bodyParser.json());
 
 app.post('/:application/:schema', (request, response) => {
-    application = request.params.application;
-    schema = request.params.schema;
-
-    fs.readFile(`schemas/${application}/${schema}.json`, (err, data) => {
-        if (err) {
-            response.status(404);
-            response.json({ "error": "schema not found" })
-            return response
-        }
-        var ajv = new Ajv();
-        let schema = JSON.parse(data);
-        var valid = ajv.validate(schema, request.body);
-        if (valid) {
-            response.status(200);
-            response.json({})
-        } else {
-            response.status(400);
-            response.json({ "errors": ajv.errors })
-        }
-    })
+    response = validation.validateJson(request, response)
 })
 
 app.get('/:application/:schema', (request, response) => {
-    application = request.params.application;
-    schema = request.params.schema;
-    const fs = require('fs');
-
-    fs.readFile(`schemas/${application}/${schema}.json`, (err, data) => {
-        if (err) {
-            response.status(404);
-            response.json({ "error": "schema not found" })
-            return response
-        }
-        let schema = JSON.parse(data);
-        response.json(schema);
-    })
+    response = validation.getSchema(request, response)
 })
 
 app.listen(port, (err) => {
