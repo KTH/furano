@@ -10,3 +10,10 @@ test('test getFilePathFromRequest', function (t) {
     result = getFilePathFromRequest(request)
     t.equal(result, 'schemas/kopps/user.json')
 });
+
+test('test fileExists', function (t) {
+    t.plan(1);
+    var fileExists = rewire('./validation').__get__('fileExists')
+    filePath = 'schemas/dizin/deployment.json'
+    t.true(fileExists(filePath))
+})
