@@ -10,11 +10,11 @@
         },
         "slackChannels": {
             "description": "The slack channels to report an expected error to",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "stackTrace": {
             "description": "The stack trace of an unexpected error",
-            "type": "string"
+            "type": ["string", "null"]
         }
     },
     "required": [
