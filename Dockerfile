@@ -4,7 +4,8 @@ COPY package.json package.json
 
 RUN [ "npm", "install" ]
 
-ADD schemas schemas
-ADD server.js server.js
+COPY schemas schemas
+COPY server.js server.js
+COPY validation.js validation.js
 
 ENTRYPOINT [ "npm", "run", "start" ]
