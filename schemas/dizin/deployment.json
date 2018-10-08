@@ -61,9 +61,9 @@
             "description": "",
             "type": "string"
         },
-        "modelVersion": {
-            "description": "",
-            "type": "integer"
+        "detectifyProfileTokens": {
+            "description": "The tokens used for detectify integrations",
+            "type": "string"
         }
     },
     "required": [
