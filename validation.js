@@ -46,7 +46,7 @@ function validateJson(request, response) {
             response.json({})
         } else {
             response.status(400);
-            response.json({ "errors": errors })
+            response.json({ "errors": ajv.errors })
         }
         return response
     })
