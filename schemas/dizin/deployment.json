@@ -54,7 +54,8 @@
         },
         "importance": {
             "description": "The importance of the application",
-            "type": "string"
+            "type": "string",
+            "enum": ["low", "medium", "high"]
         },
         "servicePath": {
             "description": "",
