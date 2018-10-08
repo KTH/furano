@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Recommendation",
+    "description": "A recommendation to be processed",
+    "type": "object",
+    "properties": {
+        "message": {
+            "description": "The recommendation message",
+            "type": "string"
+        },
+        "slackChannels": {
+            "description": "The slack channels to send the recommendation to",
+            "type": "string"
+        }
+    },
+    "required": [
+        "message",
+        "slackChannels"
+    ]
+}

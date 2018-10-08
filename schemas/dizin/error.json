@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Error",
+    "description": "An error to be processed",
+    "type": "object",
+    "properties": {
+        "message": {
+            "description": "The error message",
+            "type": "string"
+        },
+        "slackChannels": {
+            "description": "The slack channels to report an expected error to",
+            "type": "string"
+        },
+        "stackTrace": {
+            "description": "The stack trace of an unexpected error",
+            "type": "string"
+        }
+    },
+    "required": [
+        "message",
+        "slackChannels",
+        "stackTrace"
+    ]
+}
