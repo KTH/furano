@@ -39,7 +39,8 @@ function validateJson(request, response) {
             return response
         }
         let schema = JSON.parse(data);
-        let valid = ajv.validate(schema, request.body);
+        var validate = ajv.compile(schema);
+        let valid = validate(request.body);
         if (valid) {
             response.status(200);
             response.json({})

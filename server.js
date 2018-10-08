@@ -4,7 +4,12 @@ const validation = require('./validation')
 const app = express()
 const port = 3000
 
-app.use(bodyParser.json());
+// Force to accept only json requests
+app.use(bodyParser.json({
+    type: function() {
+        return true;
+    }
+}));
 
 app.post('/:application/:schema', (request, response) => {
     response = validation.validateJson(request, response)
