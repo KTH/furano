@@ -67,6 +67,9 @@
         }
     },
     "required": [
-        "applicationName, cluster, version, imageName"
+        "applicationName",
+        "cluster",
+        "version",
+        "imageName"
     ]
 }
