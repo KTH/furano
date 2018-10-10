@@ -22,31 +22,31 @@
         },
         "publishedUrl": {
             "description": "The url that is published by the deployment",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "slackChannels": {
             "description": "A comma separated list of channels to send report to",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "publicNameSwedish": {
             "description": "The swedish name of the application",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "publicNameEnglish": {
             "description": "The english name of the application",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "descriptionSwedish": {
             "description": "The swedish description of the application",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "descriptionEnglish": {
             "description": "The english description of the application",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "monitorUrl": {
             "descriptions": "The url to the _monitor page of the application",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "created": {
             "description": "The date time of when the application was deployed",
@@ -59,11 +59,11 @@
         },
         "servicePath": {
             "description": "",
-            "type": "string"
+            "type": ["string", "null"]
         },
         "detectifyProfileTokens": {
             "description": "The tokens used for detectify integrations",
-            "type": "string"
+            "type": ["string", "null"]
         }
     },
     "required": [
