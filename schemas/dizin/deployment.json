@@ -20,8 +20,8 @@
             "description": "The name of the image deployed",
             "type": "string"
         },
-        "publishedUrl": {
-            "description": "The url that is published by the deployment",
+        "applicationPath": {
+            "description": "The path that is published by the deployment. Either and absolute URL och a relaltive path beginning with /",
             "type": ["string", "null"]
         },
         "slackChannels": {
@@ -44,8 +44,8 @@
             "description": "The english description of the application",
             "type": ["string", "null"]
         },
-        "monitorUrl": {
-            "descriptions": "The url to the _monitor page of the application",
+        "monitorPath": {
+            "descriptions": "The path to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
             "type": ["string", "null"]
         },
         "created": {
@@ -56,10 +56,6 @@
             "description": "The importance of the application",
             "type": "string",
             "enum": ["low", "medium", "high"]
-        },
-        "servicePath": {
-            "description": "",
-            "type": ["string", "null"]
         },
         "detectifyProfileTokens": {
             "description": "The tokens used for detectify integrations",
