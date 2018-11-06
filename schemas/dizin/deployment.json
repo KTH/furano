@@ -66,6 +66,9 @@
         "applicationName",
         "cluster",
         "version",
-        "imageName"
-    ]
+        "imageName",
+        "applicationPath",
+        "monitorPath"
+    ],
+    "additionalProperties": false
 }
