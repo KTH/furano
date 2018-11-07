@@ -57,7 +57,7 @@ let footer = function footer(code) {
 let error404 = function error404() {
     return `
     ${header("404 - Page not found")}
-    <h1 style="font-size: 1.8rem; font-family: Georgia Regular,Georgia,garamond pro,garamond,times new roman,times,serif; font-weight: 400;">No shema found.</h1>
+    <h1 style="font-size: 1.8rem; font-family: Georgia Regular,Georgia,garamond pro,garamond,times new roman,times,serif; font-weight: 400;">No JSON schema found.</h1>
     ${footer("404")}
     `;
 }
