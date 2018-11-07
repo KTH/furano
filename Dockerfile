@@ -1,4 +1,4 @@
-FROM kthse/kth-nodejs-web:2.4
+FROM kthse/kth-nodejs:9.11.0
 
 COPY package.json package.json
 
@@ -10,4 +10,4 @@ COPY ["modules", "modules"]
 COPY ["server.js", "server.js"]
 COPY ["validation.js", "validation.js"]
 
-ENTRYPOINT [ "npm", "run", "start" ]
+CMD [ "npm", "run", "start" ]
