@@ -96,7 +96,7 @@ let _about = function _about() {
     ${header("About Furano")}
             <p><strong>Docker image:</strong> ${about.dockerName}:${about.dockerVersion}</p>
             <p><strong>Hostname:</strong> ${os.hostname()}</p>
-            <p><strong>Jenkins build date:</strong> ${about.jenkinsBuildDate}</p>
+            <p><strong>Build date:</strong> ${about.jenkinsBuildDate}</p>
         </div>
     </body>
     </html>
