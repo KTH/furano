@@ -55,7 +55,11 @@
         "importance": {
             "description": "The importance of the application",
             "type": "string",
-            "enum": ["low", "medium", "high"]
+            "enum": [
+                "low",
+                "medium",
+                "high"
+            ]
         },
         "servicePath": {
             "description": "",
@@ -63,6 +67,10 @@
         },
         "detectifyProfileTokens": {
             "description": "The tokens used for detectify integrations",
+            "type": "string"
+        },
+        "testAccessibility": {
+            "description": "Should set if accessability testing should be performed by alvares",
             "type": "string"
         }
     },
