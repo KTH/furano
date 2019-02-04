@@ -68,6 +68,10 @@
         "testAccessibility": {
             "description": "Should set if accessability testing should be performed by alvares",
             "type": ["string", "null"]
+        },
+        "accessibilityUrls": {
+            "description": "Overrides the root application url for accessibility scanning",
+            "type": ["string", "null"]
         }
     },
     "required": [
