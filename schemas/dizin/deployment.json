@@ -21,7 +21,7 @@
             "type": "string"
         },
         "applicationPath": {
-            "description": "The path that is published by the deployment. Either and absolute URL och a relaltive path beginning with /",
+            "description": "The path that is published by the deployment. Either and absolute URL och a relaltive path beginning with /. Empty if no http endpoint.",
             "type": ["string", "null"]
         },
         "slackChannels": {
@@ -45,7 +45,7 @@
             "type": ["string", "null"]
         },
         "monitorPath": {
-            "descriptions": "The path to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
+            "descriptions": "Obsolete: The path to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
             "type": ["string", "null"]
         },
         "monitorUrl": {
@@ -86,8 +86,7 @@
         "applicationName",
         "cluster",
         "version",
-        "imageName",
-        "applicationPath"
+        "imageName"
     ],
     "additionalProperties": false
 }
