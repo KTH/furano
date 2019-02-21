@@ -63,10 +63,22 @@
         "importance": {
             "description": "The importance of the application",
             "type": "string",
-            "enum": ["low", "medium", "high"]
+            "enum": [
+                "low",
+                "medium",
+                "high"
+            ]
         },
         "detectifyProfileTokens": {
             "description": "The tokens used for detectify integrations",
+            "type": ["string", "null"]
+        },
+        "testAccessibility": {
+            "description": "Should set if accessability testing should be performed by alvares",
+            "type": ["string", "null"]
+        },
+        "accessibilityUrls": {
+            "description": "Overrides the root application url for accessibility scanning",
             "type": ["string", "null"]
         }
     },
