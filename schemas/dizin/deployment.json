@@ -48,6 +48,14 @@
             "descriptions": "The path to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
             "type": ["string", "null"]
         },
+        "monitorUrl": {
+            "descriptions": "The path to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
+            "type": ["string", "null"]
+        },
+        "monitorPattern": {
+            "descriptions": "A string that should exist on the monitor page of the application.",
+            "type": ["string", "null"]
+        },
         "created": {
             "description": "The date time of when the application was deployed",
             "type": "string"
@@ -67,8 +75,7 @@
         "cluster",
         "version",
         "imageName",
-        "applicationPath",
-        "monitorPath"
+        "applicationPath"
     ],
     "additionalProperties": false
 }
