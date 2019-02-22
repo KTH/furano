@@ -44,10 +44,6 @@
             "description": "The english description of the application",
             "type": ["string", "null"]
         },
-        "monitorPath": {
-            "descriptions": "Obsolete: The path to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
-            "type": ["string", "null"]
-        },
         "monitorUrl": {
             "descriptions": "The path to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
             "type": ["string", "null"]
@@ -86,7 +82,8 @@
         "applicationName",
         "cluster",
         "version",
-        "imageName"
+        "imageName",
+        "created"
     ],
     "additionalProperties": false
 }
