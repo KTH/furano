@@ -76,7 +76,12 @@
         "accessibilityUrls": {
             "description": "Overrides the root application url for accessibility scanning",
             "type": ["string", "null"]
+        },
+        "team": {
+            "descriptions": "A team name. Ex team-studadm or team-e-larande.",
+            "type": ["string", "null"]
         }
+
     },
     "required": [
         "applicationName",
