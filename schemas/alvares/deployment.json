@@ -48,8 +48,12 @@
             "description": "The english description of the application",
             "type": ["string", "null"]
         },
+        "aboutUrl": {
+            "descriptions": "The url to the _about page of the application.",
+            "type": ["string", "null"]
+        },
         "monitorUrl": {
-            "descriptions": "The url to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
+            "descriptions": "The url to the _monitor page of the application.",
             "type": ["string", "null"]
         },
         "applicationUrl": {
