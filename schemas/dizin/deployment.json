@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Deployment",
-    "description": "A deployment to be processed",
+    "description": "Information from Aspen about a deployment into a cluster that has taken place. ",
     "type": "object",
     "properties": {
         "applicationName": {
@@ -21,7 +21,7 @@
             "type": "string"
         },
         "applicationPath": {
-            "description": "The path that is published by the deployment. Either and absolute URL och a relaltive path beginning with /. Empty if no http endpoint.",
+            "description": "The path that is published by the deployment. Always a relaltive path beginning with /. Empty if no http endpoint.",
             "type": ["string", "null"]
         },
         "slackChannels": {
@@ -45,7 +45,7 @@
             "type": ["string", "null"]
         },
         "monitorUrl": {
-            "descriptions": "The path to the _monitor page of the application. Either an absolute URL or a relative path beginning with /",
+            "descriptions": "The url to the _monitor page of the application. ",
             "type": ["string", "null"]
         },
         "monitorPattern": {
@@ -53,11 +53,11 @@
             "type": ["string", "null"]
         },
         "created": {
-            "description": "The date time of when the application was deployed",
+            "description": "The date time of when the application was deployed.",
             "type": "string"
         },
         "importance": {
-            "description": "The importance of the application",
+            "description": "The importance of the application from an Operations perspective.",
             "type": "string",
             "enum": [
                 "low",
