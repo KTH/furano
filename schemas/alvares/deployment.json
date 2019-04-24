@@ -92,6 +92,10 @@
         "team": {
             "descriptions": "A team name. Ex team-studadm or team-e-larande.",
             "type": ["string", "null"]
+        },
+        "publicUserDocumentationUrl": {
+            "descriptions": "Information about how to use the application and what it does.",
+            "type": ["string", "null"]
         }
 
     },
