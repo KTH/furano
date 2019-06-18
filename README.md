@@ -1,4 +1,4 @@
-# furano
+# Furano
 JSON schema validation service
 
 ## Description
