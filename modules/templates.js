@@ -1,13 +1,13 @@
-'use strict'
+"use strict";
 
-const os = require('os');
-const about = require('./../config/version');
+const os = require("os");
+const about = require("./../config/version");
 
 /**
  * Header html
  */
 let header = function header(title) {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
     <!-- Served by Furano -->
     <html lang="en">
     <title>${title}</title>
@@ -32,14 +32,14 @@ let header = function header(title) {
 
     <div style="padding: 40px; font-family: arial, helvetica; box-shadow: 0 0 5px 5px #aeb4ae;background-color: #fff; transform: rotate(-5deg); -moz-transform: rotate(-5deg); -webkit-transform: rotate(-5deg); padding: 30px 40px 40px; max-width: 550px; margin: 30px auto;">
         <a href="https://www.kth.se/"><img src="https://www.kth.se/polopoly_fs/1.77257!/KTH_Logotyp_RGB_2013-2.svg" alt="KTH Logotype"></a>
-`
-}
+`;
+};
 
 /**
  * Footer html
  */
 let footer = function footer(code) {
-    return `
+  return `
             <p>You probably want to go to <a href="https://www.kth.se">www.kth.se</a>.</p>
             <p>For current application status, please see our <a href="https://www.kthstatus.se/">status page</a>.</p>
             <p style="font-size: 0.6rem; color: #666">Page served by: Furano</p>
@@ -48,67 +48,66 @@ let footer = function footer(code) {
 
     </body>
     </html>
-`
-}
+`;
+};
 
 /**
  * 404 error page
  */
 let error404 = function error404() {
-    return `
+  return `
     ${header("404 - Page not found")}
     <h1 style="font-size: 1.8rem; font-family: Georgia Regular,Georgia,garamond pro,garamond,times new roman,times,serif; font-weight: 400;">No JSON schema found.</h1>
     ${footer("404")}
     `;
-}
+};
 
 /**
  * Index page.
  */
 let index = function index() {
-    return `
+  return `
     ${header("Furano")}
             <h1 style="font-size: 1.8rem; font-family: Georgia Regular,Georgia,garamond pro,garamond,times new roman,times,serif; font-weight: 400;">Furano</h1>
-            <p>You probably want to go to <a href="https://www.kth.se">www.kth.se</a>.</p>
-            <p>For current application status, please see our <a href="https://www.kthstatus.se/">status page</a>.</p>
+            <p><a href="https://gita.sys.kth.se/infosys/furano">How to validate JSON</a></p>
             <p style="font-size: 0.6rem; color: #666">Page served by: Furano</p>
         </div>
 
     </body>
     </html>
     `;
-
-}
-
+};
 
 /**
  * Monitor page
  */
 let _monitor = function _monitor() {
-    return `APPLICATION_STATUS: OK`
-}
+  return `APPLICATION_STATUS: OK`;
+};
 
 /**
  * About page
  */
 let _about = function _about() {
-    return `
+  return `
     ${header("About Furano")}
-            <p><strong>Docker image:</strong> ${about.dockerName}:${about.dockerVersion}</p>
+            <p><strong>Docker image:</strong> ${about.dockerName}:${
+    about.dockerVersion
+  }</p>
             <p><strong>Hostname:</strong> ${os.hostname()}</p>
             <p><strong>Build date:</strong> ${about.jenkinsBuildDate}</p>
         </div>
     </body>
     </html>
-    `
-}
+    `;
+};
 
 /**
  * Module exports
  */
 module.exports = {
-    index: index,
-    error404: error404,
-    _monitor: _monitor,
-    _about: _about
-}
+  index: index,
+  error404: error404,
+  _monitor: _monitor,
+  _about: _about
+};

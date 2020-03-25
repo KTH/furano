@@ -14,12 +14,12 @@
         "test-integration-in-docker": "ID=$(docker build -q .) && LOCAL_IMAGE_ID=$ID docker-compose -f docker-compose-integration-tests.yml up --abort-on-container-exit --always-recreate-deps"
     },
     "dependencies": {
-        "express": "~4.16.4",
-        "ajv": "~6.5.5",
-        "body-parser": "~1.18.3"
+        "express": "~4.17.1",
+        "ajv": "~6.12.0",
+        "body-parser": "~1.19.0"
     },
     "devDependencies": {
-        "rewire": "~4.0.1",
-        "tape": "^4.9.2"
+        "rewire": "~5.0.0",
+        "tape": "^4.13.2"
     }
 }

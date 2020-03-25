@@ -84,8 +84,11 @@
         "publicUserDocumentationUrl": {
             "descriptions": "Information about how to use the application and what it does.",
             "type": ["string", "null"]
+        },
+        "privateOperationsDocumentationUrl": {
+            "descriptions": "Information to Operation incase of a service failure..",
+            "type": ["string", "null"]
         }
-
     },
     "required": [
         "applicationName",
