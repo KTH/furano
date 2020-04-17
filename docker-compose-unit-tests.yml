@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  web:
+    image: $LOCAL_IMAGE_ID
+    volumes:
+      - ./tests.js:/tests.js
+    tty: true
+    command: ["sh", "-c", "npm install --development && npm test"]
+

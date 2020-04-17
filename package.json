@@ -10,13 +10,17 @@
     },
     "scripts": {
         "start": "node ./server.js",
-        "test": "mocha",
-        "test-integration-in-docker": "ID=$(docker build -q .) && LOCAL_IMAGE_ID=$ID docker-compose -f docker-compose-integration-tests.yml up --abort-on-container-exit --always-recreate-deps"
-    },
+        "test": "node tests",
+        "test-integration": "URL_PREFIX=http://localhost:3000 ./tests/integration-tests/basic.sh",
+        "test-integration-in-docker": "ID=$(docker build -q .) && LOCAL_IMAGE_ID=$ID docker-compose -f docker-compose-integration-tests.yml build && LOCAL_IMAGE_ID=$ID docker-compose -f docker-compose-integration-tests.yml up --force-recreate --abort-on-container-exit --always-recreate-deps",
+        "test-unit-in-docker": "ID=$(docker build -q .) && LOCAL_IMAGE_ID=$ID docker-compose -f docker-compose-unit-tests.yml up --force-recreate --abort-on-container-exit --always-recreate-deps"
+      },
     "dependencies": {
-        "express": "~4.17.1",
+        "@kth/basic-html-templates": "^1.0.3",
+        "@kth/http-responses": "^1.0.2",
         "ajv": "~6.12.0",
-        "body-parser": "~1.19.0"
+        "body-parser": "~1.19.0",
+        "express": "~4.17.1"
     },
     "devDependencies": {
         "rewire": "~5.0.0",

@@ -1,16 +1,20 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const validation = require("./validation");
-const templates = require("./modules/templates");
+const { templates } = require("@kth/basic-html-templates");
+const httpResponse = require("@kth/http-responses");
 const app = express();
-const port = 3000;
+const validation = require("./validation");
+const defaultEnvs = require("./modules/defaultEnvs");
+const about = require("./config/version");
+
+defaultEnvs.set(true);
 
 // Force to accept only json requests
 app.use(
   bodyParser.json({
-    type: function() {
+    type: function () {
       return true;
-    }
+    },
   })
 );
 
@@ -25,36 +29,44 @@ app.get("/:application/:schema", (request, response) => {
 /**
  * About route.
  */
-app.get("/_about", function(req, res) {
-  res.status(200).send(templates._about());
+app.get("/_about", function (request, response) {
+  httpResponse.ok(request, response, templates._about(about));
 });
 
 /**
  * Health check route.
  */
-app.get("/_monitor", function(req, res) {
-  res.set("Content-Type", "text/plain");
-  res.status(200).send(templates._monitor());
+app.get("/_monitor", function (request, response) {
+  httpResponse.ok(
+    request,
+    response,
+    templates._monitor((status = "OK")),
+    httpResponse.contentTypes.PLAIN_TEXT
+  );
 });
 
 /**
  * Health check route.
  */
-app.get("/", function(req, res) {
-  res.status(200).send(templates.index());
+app.get("/", function (request, response) {
+  httpResponse.ok(
+    request,
+    response,
+    templates.index("Furano - JSON Schema Validation Service")
+  );
 });
 
 /**
  * Default route, if no other route is matched.
  */
-app.use(function(req, res) {
-  res.status(404).send(templates.error404());
+app.use(function (request, response) {
+  httpResponse.notFound(request, response, templates.error404());
 });
 
-app.listen(port, err => {
+app.listen(process.env.PORT, (err) => {
   if (err) {
     return console.log("something bad happened", err);
   }
 
-  console.log(`Furano is listening on ${port}`);
+  console.log(`Furano is listening on ${process.env.PORT}`);
 });
