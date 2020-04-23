@@ -52,7 +52,11 @@ app.get("/", function (request, response) {
   httpResponse.ok(
     request,
     response,
-    templates.index("Furano - JSON Schema Validation Service")
+    templates.index(
+      (title = "Furano - JSON Schema Validation Service"),
+      (body =
+        "<p>Read how to <a href='https://gita.sys.kth.se/infosys/furano'>validate your JSON objects here</a></p>.")
+    )
   );
 });
 
