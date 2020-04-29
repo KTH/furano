@@ -6,6 +6,7 @@ const app = express();
 const validation = require("./validation");
 const defaultEnvs = require("./modules/defaultEnvs");
 const about = require("./config/version");
+const started = new Date();
 
 defaultEnvs.set(true);
 
@@ -30,7 +31,7 @@ app.get("/:application/:schema", (request, response) => {
  * About route.
  */
 app.get("/_about", function (request, response) {
-  httpResponse.ok(request, response, templates._about(about));
+  httpResponse.ok(request, response, templates._about(about, started));
 });
 
 /**
@@ -55,7 +56,7 @@ app.get("/", function (request, response) {
     templates.index(
       (title = "Furano - JSON Schema Validation Service"),
       (body =
-        "<p>Read how to <a href='https://gita.sys.kth.se/infosys/furano'>validate your JSON objects here</a></p>.")
+        "<p>Read <a href='https://gita.sys.kth.se/infosys/furano'>how to validate your JSON objects</a> here.</p>")
     )
   );
 });
