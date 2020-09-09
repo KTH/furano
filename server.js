@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { templates } = require("@kth/basic-html-templates");
+const { log } = require("./modules/logger");
 const httpResponse = require("@kth/http-responses");
 const app = express();
 const validation = require("./validation");
@@ -8,6 +9,19 @@ const defaultEnvs = require("./modules/defaultEnvs");
 const about = require("./config/version");
 const started = new Date();
 
+/**
+ * Let kth/* packages use the Furano log.
+ */
+httpResponse.setLogger(log);
+
+/**
+ * Process env:s that are not configured on start up, but accessed
+ * as envs in the application are added with there default values.
+ *
+ * They are also logged.
+ *
+ * This way you will always have a value for process.env.X
+ */
 defaultEnvs.set(true);
 
 // Force to accept only json requests
@@ -70,8 +84,8 @@ app.use(function (request, response) {
 
 app.listen(process.env.PORT, (err) => {
   if (err) {
-    return console.log("something bad happened", err);
+    return log.info("something bad happened", err);
   }
 
-  console.log(`Furano is listening on ${process.env.PORT}`);
+  log.info(`Furano is listening on ${process.env.PORT}`);
 });
