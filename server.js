@@ -1,11 +1,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const { templates } = require("@kth/basic-html-templates");
-const { log } = require("./modules/logger");
+const defaultEnvs = require("@kth/default-envs");
 const httpResponse = require("@kth/http-responses");
+const { log } = require("./modules/logger");
 const app = express();
 const validation = require("./validation");
-const defaultEnvs = require("./modules/defaultEnvs");
 const about = require("./config/version");
 const started = new Date();
 
@@ -22,7 +22,13 @@ httpResponse.setLogger(log);
  *
  * This way you will always have a value for process.env.X
  */
-defaultEnvs.set(true);
+defaultEnvs.set(
+  {
+    PORT: 3000,
+    APPINSIGHTS_INSTRUMENTATIONKEY: "",
+  },
+  log
+);
 
 // Force to accept only json requests
 app.use(
