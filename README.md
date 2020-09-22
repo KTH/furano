@@ -6,7 +6,7 @@ JSON schema validation service
 Provides and API for fetching json schema compliant objects read from a static file or to perform validation of a posted json object against these schemas.
 
 
-## Example
+## How to validate a json object against a published schema
 
 ### Python
 
@@ -21,9 +21,9 @@ self.assertEqual(result.json(), {})
 self.assertEqual(result.status_code, 200)
 ```
 
-`[url]:[port]/[application name]/[schema name without .json]` `GET` - Returns the schema as a json object
+`https://app.kth.se/jsonschema/[application name]/[schema name without .json]` `GET` - Returns the schema as a json object
 
-`[url]:[port]/[application name]/[schema name without .json]` `POST` - Validates the posted json body against schema given by the url. Returns `200 OK {}` on successful validation and `400 Bad Request {"error": "[validation errors]"}` on failed validation.
+`https://app.kth.se/jsonschema/[schema name without .json]` `POST` - Validates the posted json body against schema given by the url. Returns `200 OK {}` on successful validation and `400 Bad Request {"error": "[validation errors]"}` on failed validation.
 
 On a request for a schema that doesn't exist, the server will return `404 Page not found`
 
