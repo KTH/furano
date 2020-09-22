@@ -5,7 +5,21 @@ JSON schema validation service
 
 Provides and API for fetching json schema compliant objects read from a static file or to perform validation of a posted json object against these schemas.
 
-## API endpoints
+
+## Example
+
+### Python
+
+
+```python
+deploymentJsonToValidate = {
+  "name": "profiles-web",
+  "...": "more values"
+}
+result = requests.post("https://app.kth.se/jsonschema/dizin/deployment", json=deploymentJsonToValidate, allow_redirects=False)
+self.assertEqual(result.json(), {})
+self.assertEqual(result.status_code, 200)
+```
 
 `[url]:[port]/[application name]/[schema name without .json]` `GET` - Returns the schema as a json object
 
