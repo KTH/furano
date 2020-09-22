@@ -1,33 +1,29 @@
-# Furano
-JSON schema validation service
-
-## Description
-
-Provides and API for fetching json schema compliant objects read from a static file or to perform validation of a posted json object against these schemas.
-
+# Furano - JSON schema validation service
+**Provides and API for fetching json schema compliant objects read from a static file or to perform validation of a posted json object against these schemas.**
 
 ## How to validate a json object against a published schema
 
-### Python
-
-
 ```python
+# Example in Python
 deploymentJsonToValidate = {
   "name": "profiles-web",
   "...": "more values"
 }
+
+# The service here is proxied under /jsonschema/ if you run it locally remove the /jsonschema path.
 result = requests.post("https://app.kth.se/jsonschema/dizin/deployment", json=deploymentJsonToValidate, allow_redirects=False)
 self.assertEqual(result.json(), {})
 self.assertEqual(result.status_code, 200)
 ```
-
-`https://app.kth.se/jsonschema/[application name]/[schema name without .json]` `GET` - Returns the schema as a json object
-
+### Response from validation 
 `https://app.kth.se/jsonschema/[schema name without .json]` `POST` - Validates the posted json body against schema given by the url. Returns `200 OK {}` on successful validation and `400 Bad Request {"error": "[validation errors]"}` on failed validation.
+
+### Get a schema to validate agains
+`https://app.kth.se/jsonschema/[application name]/[schema name without .json]` `GET` - Returns the schema as a json object
 
 On a request for a schema that doesn't exist, the server will return `404 Page not found`
 
-## How to add your own schema
+## 🚀 Add your own schema to validate your application!
 
 1. Clone the repository
 2. Add a directory under `/schemas` with your application name
