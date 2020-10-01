@@ -17,8 +17,8 @@
         "test-unit-in-docker": "ID=$(docker build -q .) && LOCAL_IMAGE_ID=$ID docker-compose -f docker-compose-unit-tests.yml up --force-recreate --abort-on-container-exit --always-recreate-deps"
     },
     "dependencies": {
+        "@kth/default-envs": "^0.0.9",
         "@kth/basic-html-templates": "^1.0.26",
-        "@kth/default-envs": "^0.0.6",
         "@kth/http-responses": "^1.0.24",
         "ajv": "~6.12.5",
         "body-parser": "~1.19.0",
