@@ -68,6 +68,10 @@
             "description": "The date time of when the application was deployed",
             "type": "string"
         },
+        "replicas": {
+            "description": "Number of instances to run",
+            "type": "string"
+        },
         "importance": {
             "description": "The importance of the application",
             "type": "string",
@@ -110,7 +114,8 @@
         "imageName",
         "created",
         "friendlyName",
-        "monitorPattern"
+        "monitorPattern",
+        "replicas"
 
     ],
     "additionalProperties": false
