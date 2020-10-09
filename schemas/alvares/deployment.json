@@ -70,7 +70,7 @@
         },
         "replicas": {
             "description": "Number of instances to run",
-            "type": "string"
+            "type": "number"
         },
         "importance": {
             "description": "The importance of the application",

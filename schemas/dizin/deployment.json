@@ -91,7 +91,7 @@
         },
         "replicas": {
             "description": "Number of instances to run",
-            "type": "string"
+            "type": "number"
         }
     },
     "required": [
