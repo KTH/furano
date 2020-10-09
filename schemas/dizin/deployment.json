@@ -88,6 +88,10 @@
         "privateOperationsDocumentationUrl": {
             "descriptions": "Information to Operation incase of a service failure..",
             "type": ["string", "null"]
+        },
+        "replicas": {
+            "description": "Number of instances to run",
+            "type": "string"
         }
     },
     "required": [
@@ -95,7 +99,8 @@
         "cluster",
         "version",
         "imageName",
-        "created"
+        "created",
+        "replicas"
     ],
     "additionalProperties": false
 }
