@@ -91,7 +91,7 @@
         },
         "replicas": {
             "description": "Number of instances to run",
-            "type": "number"
+            "type": ["number", "string", "null"]
         }
     },
     "required": [
@@ -99,8 +99,7 @@
         "cluster",
         "version",
         "imageName",
-        "created",
-        "replicas"
+        "created"    
     ],
     "additionalProperties": false
 }
