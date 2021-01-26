@@ -1,0 +1,122 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Deployment",
+    "description": "Alvares ths enriches deployment data from Aspen with some added properties.",
+    "type": "object",
+    "properties": {
+        "applicationName": {
+            "description": "The name of the application",
+            "type": "string"
+        },
+        "cluster": {
+            "description": "The name of the cluster (stage, active..)",
+            "type": "string"
+        },
+        "version": {
+            "description": "The version of the image deployed",
+            "type": "string"
+        },
+        "imageName": {
+            "description": "The name of the image deployed",
+            "type": "string"
+        },
+        "applicationPath": {
+            "description": "The path that is published by the deployment. Either and absolute URL och a relaltive path beginning with /. Empty if no http endpoint.",
+            "type": ["string", "null"]
+        },
+        "slackChannels": {
+            "description": "A comma separated list of channels to send report to",
+            "type": ["string", "null"]
+        },
+        "friendlyName": {
+            "description": "The best public name to use based on application name or public names.",
+            "type": ["string", "null"]
+        },
+        "publicNameSwedish": {
+            "description": "The swedish name of the application",
+            "type": ["string", "null"]
+        },
+        "publicNameEnglish": {
+            "description": "The english name of the application",
+            "type": ["string", "null"]
+        },
+        "descriptionSwedish": {
+            "description": "The swedish description of the application",
+            "type": ["string", "null"]
+        },
+        "descriptionEnglish": {
+            "description": "The english description of the application",
+            "type": ["string", "null"]
+        },
+        "aboutUrl": {
+            "descriptions": "The url to the _about page of the application.",
+            "type": ["string", "null"]
+        },
+        "monitorUrl": {
+            "descriptions": "The url to the _monitor page of the application.",
+            "type": ["string", "null"]
+        },
+        "applicationUrl": {
+            "descriptions": "The url to the index page of the application. Either an absolute URL.",
+            "type": ["string", "null"]
+        },
+        "monitorPattern": {
+            "descriptions": "A string that should exist on the monitor page of the application.",
+            "type": ["string", "null"]
+        },
+        "created": {
+            "description": "The date time of when the application was deployed",
+            "type": "string"
+        },
+        "replicas": {
+            "description": "Number of instances to run",
+            "type": "number"
+        },
+        "importance": {
+            "description": "The importance of the application",
+            "type": "string",
+            "enum": [
+                "low",
+                "medium",
+                "high"
+            ]
+        },
+        "detectifyProfileTokens": {
+            "description": "The tokens used for detectify integrations",
+            "type": ["string", "null"]
+        },
+        "testAccessibility": {
+            "description": "Should set if accessability testing should be performed by alvares",
+            "type": ["string", "null"]
+        },
+        "accessibilityUrls": {
+            "description": "Overrides the root application url for accessibility scanning",
+            "type": ["string", "null"]
+        },
+        "team": {
+            "descriptions": "A team name. Ex team-studadm or team-e-larande.",
+            "type": ["string", "null"]
+        },
+        "publicUserDocumentationUrl": {
+            "descriptions": "Information about how to use the application and what it does.",
+            "type": ["string", "null"]
+        },
+        "privateOperationsDocumentationUrl": {
+            "descriptions": "Information to Operation incase of a service failure..",
+            "type": ["string", "null"]
+        }
+
+    },
+    "required": [
+        "applicationName",
+        "cluster",
+        "version",
+        "imageName",
+        "created",
+        "friendlyName",
+        "monitorPattern",
+        "replicas"
+
+    ],
+    "additionalProperties": false
+}
